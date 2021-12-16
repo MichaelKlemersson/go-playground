@@ -10,12 +10,12 @@ func main() {
 		Name:   "Brazil",
 		Locale: "BR",
 	}
-	germany := country.CountryWithMethod{
+	germany := country.CountryWithId{
 		Country: country.Country{
 			Name:   "Germany",
 			Locale: "DE",
 		},
-		Id: 1,
+		Id: 12,
 	}
 
 	fmt.Println(brazil.Name, germany.GetName(), germany.GetId())

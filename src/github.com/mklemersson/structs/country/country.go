@@ -6,12 +6,12 @@ import (
 )
 
 type Country struct {
-	Name   string
-	Locale string
+	Name   string `json:"name"`
+	Locale string `json:"locale"`
 }
 
-type CountryWithMethod struct {
-	Id int
+type CountryWithId struct {
+	Id int `json:"id"`
 	Country
 }
 
@@ -19,7 +19,7 @@ func (country Country) GetName() string {
 	return country.Name
 }
 
-func (country CountryWithMethod) GetId() int {
+func (country CountryWithId) GetId() int {
 	return country.Id
 }
 
@@ -28,6 +28,16 @@ func (country Country) ToJson() string {
 
 	if err != nil {
 		fmt.Println("Fail to convert country to JSON")
+	}
+
+	return string(jsonBuffer)
+}
+
+func (country CountryWithId) ToJson() string {
+	jsonBuffer, err := json.Marshal(country)
+
+	if err != nil {
+		fmt.Println("Fail to convert country with id to JSON")
 	}
 
 	return string(jsonBuffer)
