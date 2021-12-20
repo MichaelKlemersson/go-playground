@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-playground/src/github.com/mklemersson/structs/country"
+	"github.com/mklemersson/go-playground/src/structs/country"
 )
 
 func main() {
