@@ -19,6 +19,6 @@ func main() {
 	}
 
 	fmt.Println(brazil.Name, germany.GetName(), germany.GetId())
-	fmt.Println(brazil.ToJson())
-	fmt.Println(germany.ToJson())
+	fmt.Println(country.ToJson(brazil))
+	fmt.Println(country.ToJson(germany))
 }

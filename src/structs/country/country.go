@@ -23,17 +23,7 @@ func (country CountryWithId) GetId() int {
 	return country.Id
 }
 
-func (country Country) ToJson() string {
-	jsonBuffer, err := json.Marshal(country)
-
-	if err != nil {
-		fmt.Println("Fail to convert country to JSON")
-	}
-
-	return string(jsonBuffer)
-}
-
-func (country CountryWithId) ToJson() string {
+func ToJson(country interface{}) string {
 	jsonBuffer, err := json.Marshal(country)
 
 	if err != nil {
